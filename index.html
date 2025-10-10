@@ -214,25 +214,28 @@ document.getElementById('imgModal').onclick = function(e) {
     <section class="downloads glass" id="download-section">
       <div class="container">
         <h2>Download the Dataset</h2>
-        <div style="color:#b00;font-weight:bold;margin-bottom:1em;">
+        <!--<div style="color:#b00;font-weight:bold;margin-bottom:1em;">
           Coming soon! The dataset will be available for download after publication.
-        </div>
+        </div>-->
     
         <div class="download-links">
-          <a id="download-full" class="download-btn" href="#" target="_blank">
-            <i class="fas fa-download"></i> Full Dataset (Train/Val)
+          <a id="download-1" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-download"></i> Part 1
           </a>
-          <a id="download-test" class="download-btn" href="#" target="_blank">
-            <i class="fas fa-download"></i> Test Split (Experiments)
+          <a id="download-2" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-download"></i> Part 2
           </a>
-          <a id="download-train-json" class="download-btn" href="#" target="_blank">
-            <i class="fas fa-file-alt"></i> Training JSON
+          <a id="download-3" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-file-alt"></i> Part 3
           </a>
-          <a id="download-val-json" class="download-btn" href="#" target="_blank">
-            <i class="fas fa-file-alt"></i> Validation JSON
+          <a id="download-4" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-file-alt"></i> Part 4
           </a>
-          <a id="download-checkpoints" class="download-btn" href="#" target="_blank">
-            <i class="fas fa-cogs"></i> Model Checkpoints
+          <a id="download-5" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-cogs"></i> Part 5
+          </a>
+          <a id="download-ood" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-cogs"></i> OOD Data
           </a>
         </div>
       </div>
@@ -241,11 +244,12 @@ document.getElementById('imgModal').onclick = function(e) {
     <script>
       // Map each button ID to its actual file URL
       const downloads = {
-        "download-full": "files/full_dataset.zip",
-        "download-test": "files/test_split.zip",
-        "download-train-json": "files/train_annotations.json",
-        "download-val-json": "files/val_annotations.json",
-        "download-checkpoints": "files/model_checkpoints.zip"
+        "download-1": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/first_data.zip",
+        "download-2": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/second_data.zip",
+        "download-3": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/third_data.zip",
+        "download-4": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/fourth_data.zip",
+        "download-5": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/fifth_data.zip",
+        "download-ood": "https://www2.informatik.uni-hamburg.de/wtm/corpora/nicol_glass_dataset/ood_pouring_samples.zip",
       };
     
       // Loop through and attach click listeners
@@ -286,5 +290,6 @@ document.getElementById('imgModal').onclick = function(e) {
     </footer>
 </body>
 </html>
+
 
 
