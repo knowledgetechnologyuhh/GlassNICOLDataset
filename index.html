@@ -197,7 +197,7 @@ document.getElementById('imgModal').onclick = function(e) {
     </section>
 
     <!-- Download Section -->
-    <section class="downloads glass" id="download-section">
+    <!--<section class="downloads glass" id="download-section">
         <div class="container">
             <h2>Download the Dataset</h2>
             <div style="color:#b00;font-weight:bold;margin-bottom:1em;">Coming soon! The dataset will be available for download after publication.</div>
@@ -209,7 +209,61 @@ document.getElementById('imgModal').onclick = function(e) {
                 <a class="download-btn" href="#" target="_blank" style="pointer-events:none;opacity:0.5;"><i class="fas fa-cogs"></i> Model Checkpoints</a>
             </div>
         </div>
+    </section>-->
+
+    <section class="downloads glass" id="download-section">
+      <div class="container">
+        <h2>Download the Dataset</h2>
+        <div style="color:#b00;font-weight:bold;margin-bottom:1em;">
+          Coming soon! The dataset will be available for download after publication.
+        </div>
+    
+        <div class="download-links">
+          <a id="download-full" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-download"></i> Full Dataset (Train/Val)
+          </a>
+          <a id="download-test" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-download"></i> Test Split (Experiments)
+          </a>
+          <a id="download-train-json" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-file-alt"></i> Training JSON
+          </a>
+          <a id="download-val-json" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-file-alt"></i> Validation JSON
+          </a>
+          <a id="download-checkpoints" class="download-btn" href="#" target="_blank">
+            <i class="fas fa-cogs"></i> Model Checkpoints
+          </a>
+        </div>
+      </div>
     </section>
+
+    <script>
+      // Map each button ID to its actual file URL
+      const downloads = {
+        "download-full": "files/full_dataset.zip",
+        "download-test": "files/test_split.zip",
+        "download-train-json": "files/train_annotations.json",
+        "download-val-json": "files/val_annotations.json",
+        "download-checkpoints": "files/model_checkpoints.zip"
+      };
+    
+      // Loop through and attach click listeners
+      Object.entries(downloads).forEach(([id, url]) => {
+        const btn = document.getElementById(id);
+        if (btn) {
+          btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            const link = document.createElement("a");
+            link.href = url;
+            link.download = "";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          });
+        }
+      });
+    </script>
 
     <!-- Citation Section (last) -->
     <section class="citation glass">
@@ -232,4 +286,5 @@ document.getElementById('imgModal').onclick = function(e) {
     </footer>
 </body>
 </html>
+
 
